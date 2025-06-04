@@ -38,15 +38,53 @@ sst <- read_csv("../data/SST_update2023.csv")
 sst_clean <- sst |> # starting with the sst data frame
   filter(year(date) >=2018) |> # filtering to only include dates with year at or after 2018
   mutate(year = year(date), # adding a year column
+         year = as_factor(year),
         month = month(date, label = TRUE), # adding a month column, with letters (Jan) instead of numbers (1)
         month = as_factor(month)) |> # making months a factor with 12 variables
     group_by(year, month) |> # grouping by month and year to allow data to be summarized
-  summarize(mean_monthly_sst = round(mean(temp), 1)) # finding the mean sea surface temperatures of every measurement taken in each month in the data frame, rounded to one decimal placestr
+  summarize(mean_monthly_sst = round(mean(temp), 1)) # finding the mean sea surface temperatures of every measurement taken in each month in the data frame, rounded to one decimal place
 
-sst_clean |>
-  ungroup() |>
-slice_sample(n = 5)
+sst_clean |> # starting with the sst_clean data frame
+  ungroup() |> # ungrouping so that sliced samples are not taken for each year
+slice_sample(n = 5) # slicing 5 samples from any five months
 
-str(sst_clean)
+str(sst_clean) # looking at underlying data and factors
 ```
+
+## b.
+```{r}
+ggplot(data = sst_clean, # starting with the sst_clean dataframe
+    aes(x = month, # setting x axis as month
+         y = mean_monthly_sst, # setting y axis as mean sea surface temperature
+        color = year, # coloring by year
+        group = year)) + # grouping by year (connects points for each year)
+  geom_point() + # adding each data point
+  geom_line() + # connecting points
+  scale_color_manual(values = c("2018" = "#86dfa2", # coloring 2018 as the lightest green
+                                "2019" = "#71d290", # coloring 2019 as a slightly darker green than 2018
+                                "2020" = "#55bb76", # coloring 2020 as a slightly darker green than 2019
+                                "2021" = "#42ab64", # coloring 2021 as a slightly darker green than 2020
+                                "2022" = "#197236", # coloring 2022 as a slightly darker green than 2021
+                                "2023" = "#105827")) + # coloring 2023 as the darkest green
+  labs(x = "Month", # labeling the x axis as "Month"
+       y = "Mean monthly sea surface temperature (°C)", # labeling the y axis
+       color = "Year") + # relabeling the legend to "Year"
+  theme_bw() + # using black and white ggplot theme
+  theme(legend.position = c(0.1, 0.7), # moving legend position to inside graph
+        panel.grid.major = element_blank(), # removing major lines, which are vertical lines and some of the horizontal
+        panel.grid.minor = element_blank() # removing minor lines, which are horizontal
+  ) + 
+  scale_y_continuous( # changing the scale of the graph
+    breaks = seq(14, 20, by = 2), # matching given visualization, with ticks at 14 through 20
+    limits = c(12.4,19.65)) # manually setting the min and max of the y-axis, adjusting so that '20' is aligned with the top of the graph and the lowest point is appropriately displayed and settled at the bottom
+```
+
+# Problem 3. Data analysis
+
+```{r}
+nest_boxes <- read_csv("../data/occdist.csv")
+```
+
+
+## a. 
 
