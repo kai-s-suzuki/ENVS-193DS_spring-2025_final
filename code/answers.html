@@ -76,8 +76,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-  
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#problem-1.-research-writing" id="toc-problem-1.-research-writing" class="nav-link active" data-scroll-target="#problem-1.-research-writing">Problem 1. Research writing</a>
+  <ul>
+  <li><a href="#a." id="toc-a." class="nav-link" data-scroll-target="#a.">a.</a></li>
+  <li><a href="#b." id="toc-b." class="nav-link" data-scroll-target="#b.">b.</a></li>
+  <li><a href="#c." id="toc-c." class="nav-link" data-scroll-target="#c.">c.&nbsp;</a></li>
+  </ul></li>
+  <li><a href="#problem-2.-data-visualization" id="toc-problem-2.-data-visualization" class="nav-link" data-scroll-target="#problem-2.-data-visualization">Problem 2. Data visualization</a>
+  <ul>
+  <li><a href="#a.-1" id="toc-a.-1" class="nav-link" data-scroll-target="#a.-1">a.</a></li>
+  </ul></li>
+  </ul>
+</nav>
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -118,6 +133,85 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<section id="problem-1.-research-writing" class="level1">
+<h1>Problem 1. Research writing</h1>
+<section id="a." class="level2">
+<h2 class="anchored" data-anchor-id="a.">a.</h2>
+<p>In part 1, my co-worker used a linear model, likely a test finding the Pearson correlation coefficient based on the continuous values. In part 2, a one-way ANOVA test was likely used, as they are looking for one continuous variable being different between multiple sources.</p>
+</section>
+<section id="b." class="level2">
+<h2 class="anchored" data-anchor-id="b.">b.</h2>
+<p>In part 2, they could have shown us the variances of each source and ran a Tukey’s honest significance test. Showing the variances between the different sources can explain whether the test assumed equal variances or not; if the variances are similar–within four times of each other as a gut test, it would change the perception of the information. A Tukey’s HSD test run after would then tell us which sources were different from each other.</p>
+</section>
+<section id="c." class="level2">
+<h2 class="anchored" data-anchor-id="c.">c.&nbsp;</h2>
+</section>
+</section>
+<section id="problem-2.-data-visualization" class="level1">
+<h1>Problem 2. Data visualization</h1>
+<section id="a.-1" class="level2">
+<h2 class="anchored" data-anchor-id="a.-1">a.</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sst <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../data/SST_update2023.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 291384 Columns: 5
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (1): site
+dbl  (3): latitude, longitude, temp
+date (1): date
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data wrangling</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sst_clean <span class="ot">&lt;-</span> sst <span class="sc">|&gt;</span> <span class="co"># starting with the sst data frame</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">year</span>(date) <span class="sc">&gt;=</span><span class="dv">2018</span>) <span class="sc">|&gt;</span> <span class="co"># filtering to only include dates with year at or after 2018</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(date), <span class="co"># adding a year column</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">month =</span> <span class="fu">month</span>(date, <span class="at">label =</span> <span class="cn">TRUE</span>), <span class="co"># adding a month column, with letters (Jan) instead of numbers (1)</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">month =</span> <span class="fu">as_factor</span>(month)) <span class="sc">|&gt;</span> <span class="co"># making months a factor with 12 variables</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(year, month) <span class="sc">|&gt;</span> <span class="co"># grouping by month and year to allow data to be summarized</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_monthly_sst =</span> <span class="fu">round</span>(<span class="fu">mean</span>(temp), <span class="dv">1</span>)) <span class="co"># finding the mean sea surface temperatures of every measurement taken in each month in the data frame, rounded to one decimal placestr</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'year'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sst_clean <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+   year month mean_monthly_sst
+  &lt;dbl&gt; &lt;ord&gt;            &lt;dbl&gt;
+1  2018 Apr               12.8
+2  2019 Nov               16.8
+3  2022 Aug               17.5
+4  2021 Mar               12.6
+5  2021 Feb               13.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sst_clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>gropd_df [72 × 3] (S3: grouped_df/tbl_df/tbl/data.frame)
+ $ year            : num [1:72] 2018 2018 2018 2018 2018 ...
+ $ month           : Ord.factor w/ 12 levels "Jan"&lt;"Feb"&lt;"Mar"&lt;..: 1 2 3 4 5 6 7 8 9 10 ...
+ $ mean_monthly_sst: num [1:72] 15 14.3 13.5 12.8 13.6 15.5 18.2 19.6 18.2 18.5 ...
+ - attr(*, "groups")= tibble [6 × 2] (S3: tbl_df/tbl/data.frame)
+  ..$ year : num [1:6] 2018 2019 2020 2021 2022 ...
+  ..$ .rows: list&lt;int&gt; [1:6] 
+  .. ..$ : int [1:12] 1 2 3 4 5 6 7 8 9 10 ...
+  .. ..$ : int [1:12] 13 14 15 16 17 18 19 20 21 22 ...
+  .. ..$ : int [1:12] 25 26 27 28 29 30 31 32 33 34 ...
+  .. ..$ : int [1:12] 37 38 39 40 41 42 43 44 45 46 ...
+  .. ..$ : int [1:12] 49 50 51 52 53 54 55 56 57 58 ...
+  .. ..$ : int [1:12] 61 62 63 64 65 66 67 68 69 70 ...
+  .. ..@ ptype: int(0) 
+  ..- attr(*, ".drop")= logi TRUE</code></pre>
+</div>
+</div>
+</section>
+</section>
 
 </main>
 <!-- /main column -->

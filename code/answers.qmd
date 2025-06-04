@@ -16,3 +16,37 @@ library(here)
 library(janitor)
 ```
 
+# Problem 1. Research writing
+
+## a. 
+In part 1, my co-worker used a linear model, likely a test finding the Pearson correlation coefficient based on the continuous values. In part 2, a one-way ANOVA test was likely used, as they are looking for one continuous variable being different between multiple sources. 
+
+## b. 
+In part 2, they could have shown us the variances of each source and ran a Tukey's honest significance test. Showing the variances between the different sources can explain whether the test assumed equal variances or not; if the variances are similar--within four times of each other as a gut test, it would change the perception of the information. A Tukey's HSD test run after would then tell us which sources were different from each other. 
+
+## c. 
+
+# Problem 2. Data visualization
+
+## a. 
+```{r}
+sst <- read_csv("../data/SST_update2023.csv")
+```
+
+```{r}
+# data wrangling
+sst_clean <- sst |> # starting with the sst data frame
+  filter(year(date) >=2018) |> # filtering to only include dates with year at or after 2018
+  mutate(year = year(date), # adding a year column
+        month = month(date, label = TRUE), # adding a month column, with letters (Jan) instead of numbers (1)
+        month = as_factor(month)) |> # making months a factor with 12 variables
+    group_by(year, month) |> # grouping by month and year to allow data to be summarized
+  summarize(mean_monthly_sst = round(mean(temp), 1)) # finding the mean sea surface temperatures of every measurement taken in each month in the data frame, rounded to one decimal placestr
+
+sst_clean |>
+  ungroup() |>
+slice_sample(n = 5)
+
+str(sst_clean)
+```
+
