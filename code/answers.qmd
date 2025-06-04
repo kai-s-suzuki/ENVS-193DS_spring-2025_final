@@ -1,0 +1,18 @@
+---
+title: "Homework 3"
+author: "Kai Suzuki"
+date: "2025-06-11"
+format: 
+  html:
+    toc: true
+    toc-depth: 12
+---
+
+[Link to Repository](https://github.com/kai-s-suzuki/ENVS-193DS_spring-2025_final)
+
+```{r packages, message=FALSE}
+library(tidyverse)
+library(here)
+library(janitor)
+```
+
