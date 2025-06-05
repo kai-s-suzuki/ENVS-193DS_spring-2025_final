@@ -97,6 +97,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#a.-2" id="toc-a.-2" class="nav-link" data-scroll-target="#a.-2">a.</a></li>
   <li><a href="#b.-2" id="toc-b.-2" class="nav-link" data-scroll-target="#b.-2">b.</a></li>
   <li><a href="#c.-1" id="toc-c.-1" class="nav-link" data-scroll-target="#c.-1">c.&nbsp;</a></li>
+  <li><a href="#d." id="toc-d." class="nav-link" data-scroll-target="#d.">d.&nbsp;</a></li>
+  <li><a href="#e." id="toc-e." class="nav-link" data-scroll-target="#e.">e.</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -193,11 +195,11 @@ date (1): date
 <pre><code># A tibble: 5 × 3
   year  month mean_monthly_sst
   &lt;fct&gt; &lt;ord&gt;            &lt;dbl&gt;
-1 2023  Sep               18.4
-2 2022  Sep               19.3
-3 2018  Feb               14.3
-4 2023  Mar               12.8
-5 2019  Jul               16.3</code></pre>
+1 2019  Sep               18.8
+2 2022  Oct               17.9
+3 2023  Oct               17.4
+4 2021  Feb               13.1
+5 2020  Jan               14.6</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sst_clean) <span class="co"># looking at underlying data and factors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -287,6 +289,59 @@ dbl (6): edge distance, season, sp, cs, e, tm
 <section id="c.-1" class="level2">
 <h2 class="anchored" data-anchor-id="c.-1">c.&nbsp;</h2>
 <p>The 2016 ‘season’ represents the first year of the study that coincided with a tree blooming event, where the boxes were deployed for the first time at the location. The 2019 ‘season’ represents another tree blooming event, with the boxes left with uncertainty of whether the parrots would return to the same location for nesting.</p>
+</section>
+<section id="d." class="level2">
+<h2 class="anchored" data-anchor-id="d.">d.&nbsp;</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 10%">
+<col style="width: 32%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Model number</th>
+<th style="text-align: center;">Season</th>
+<th style="text-align: center;">Distance to Forest Edge</th>
+<th style="text-align: center;">Model Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">no predictors (null model)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">all predictors (sat model)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Season only</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">Distance to Forest Edge only</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="e." class="level2">
+<h2 class="anchored" data-anchor-id="e.">e.</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>nest_boxes_clean <span class="ot">&lt;-</span> nest_boxes <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(box_occupant, edge_distance, season, sp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 </section>
 
