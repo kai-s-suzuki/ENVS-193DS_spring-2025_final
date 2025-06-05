@@ -14,6 +14,8 @@ format:
 library(tidyverse)
 library(here)
 library(janitor)
+library(DHARMa)
+library(MuMIn)
 ```
 
 # Problem 1. Research writing
@@ -33,7 +35,7 @@ In part 2, they could have shown us the variances of each source and ran a Tukey
 sst <- read_csv("../data/SST_update2023.csv")
 ```
 
-```{r}
+```{r message = FALSE}
 # data wrangling
 sst_clean <- sst |> # starting with the sst data frame
   filter(year(date) >=2018) |> # filtering to only include dates with year at or after 2018
@@ -52,7 +54,7 @@ str(sst_clean) # looking at underlying data and factors
 ```
 
 ## b.
-```{r}
+```{r warning = FALSE}
 ggplot(data = sst_clean, # starting with the sst_clean dataframe
     aes(x = month, # setting x axis as month
          y = mean_monthly_sst, # setting y axis as mean sea surface temperature
@@ -82,7 +84,7 @@ ggplot(data = sst_clean, # starting with the sst_clean dataframe
 # Problem 3. Data analysis
 
 ```{r}
-nest_boxes <- read_csv("../data/occdist.csv")
+nest_boxes <- read_csv("../data/occdist.csv") # reading in data from article
 ```
 
 
@@ -109,9 +111,39 @@ The 2016 'season' represents the first year of the study that coincided with a t
 | 3            |        |            X            | Distance to Forest Edge only |    
 
 ## e. 
+
 ```{r}
-nest_boxes_clean <- nest_boxes |>
-  clean_names() |>
-  select(box_occupant, edge_distance, season, sp)
+nest_boxes_clean <- nest_boxes |> # starting with the nest_boxes dataframe
+  clean_names() |> # cleaning names
+  select(box_occupant, edge_distance, season, sp) # selecting specific rows
+```
+
+```{r}
+model0 <- glm(sp ~ 1, # linear model without predictors
+              data = nest_boxes_clean, # using the clean dataframe
+              family = binomial)
+model1 <- glm(sp ~ season + edge_distance, # linear model of parrot occupancy predicted by season and distance
+             data = nest_boxes_clean, # using the clean dataframe
+             family = binomial)
+model2 <- glm(sp ~ season, # linear model of parrot occupancy predicted by season
+             data = nest_boxes_clean, # using the clean dataframe
+             family = binomial)
+model3 <- glm(sp ~ edge_distance, # linear model of parrot occupancy predicted by distance
+             data = nest_boxes_clean, # using the clean dataframe
+             family = binomial)
+```
+
+```{r}
+plot(simulateResiduals(model0))
+plot(simulateResiduals(model1))
+plot(simulateResiduals(model2))
+plot(simulateResiduals(model3))
+```
+
+```{r}
+summary(model0)
+summary(model1)
+summary(model2)
+summary(model3)
 ```
 
