@@ -88,3 +88,13 @@ nest_boxes <- read_csv("../data/occdist.csv")
 
 ## a. 
 
+Biologically, a '0' in either the 'sp', 'cs', or 'tm' columns, means that the box was either unoccupied, or a different bird species occupied the box; a '0' in the 'e' column means that the box was occupied by any bird. 
+A '1' in either the 'sp', 'cs', or 'tm' columns means that the box was occupied by one or more of that bird species; a '1' in the 'e' column means that the box was unoccupied by any bird. 
+
+## b. 
+
+In the context of this study, Swift Parrots are the target species for occupants of these bird boxes, as they are picky in terms of nesting locations compared to the Common Starling and Tree Martins. Neither species is particularly dominant over the other, but the Swift Parrot has suffered the most due to its selective behavior and requires the most attention in terms of conservation. 
+
+## c. 
+
+The 2016 'season' represents the first year of the study that coincided with a tree blooming event, where the boxes were deployed for the first time at the location. The 2019 'season' represents another tree blooming event, with the boxes left with uncertainty of whether the parrots would return to the same location for nesting. 
