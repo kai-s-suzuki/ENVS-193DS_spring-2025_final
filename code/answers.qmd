@@ -122,15 +122,18 @@ nest_boxes_clean <- nest_boxes |> # starting with the nest_boxes dataframe
 model0 <- glm(sp ~ 1, # linear model without predictors
               data = nest_boxes_clean, # using the clean dataframe
               family = binomial) # binary variable (0/1, unoccupied/occupied)
+
 model1 <- glm(sp ~ season + edge_distance, # linear model of parrot occupancy predicted by season and distance
-             data = nest_boxes_clean, 
-             family = binomial)
+             data = nest_boxes_clean, # using the clean dataframe
+             family = binomial) # binary variable (0/1, unoccupied/occupied)
+
 model2 <- glm(sp ~ season, # linear model of parrot occupancy predicted by season
-             data = nest_boxes_clean, 
-             family = binomial)
+             data = nest_boxes_clean, # using the clean dataframe
+             family = binomial) # binary variable (0/1, unoccupied/occupied)
+
 model3 <- glm(sp ~ edge_distance, # linear model of parrot occupancy predicted by distance
-             data = nest_boxes_clean, 
-             family = binomial)
+             data = nest_boxes_clean, # using the clean dataframe
+             family = binomial) # binary variable (0/1, unoccupied/occupied)
 ```
 
 ## f. 

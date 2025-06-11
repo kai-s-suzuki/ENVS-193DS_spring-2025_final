@@ -226,11 +226,11 @@ window.Quarto = {
 <pre><code># A tibble: 5 × 3
   year  month mean_monthly_sst
   &lt;fct&gt; &lt;ord&gt;            &lt;dbl&gt;
-1 2019  Apr               13.7
-2 2018  Oct               18.5
+1 2019  Jun               15.8
+2 2019  Mar               13.6
 3 2020  Jul               17  
-4 2021  Aug               17.7
-5 2018  Feb               14.3</code></pre>
+4 2019  Jul               16.3
+5 2020  Apr               14.3</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sst_clean) <span class="co"># looking at underlying data and factors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -359,15 +359,18 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>model0 <span class="ot">&lt;-</span> <span class="fu">glm</span>(sp <span class="sc">~</span> <span class="dv">1</span>, <span class="co"># linear model without predictors</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> nest_boxes_clean, <span class="co"># using the clean dataframe</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">family =</span> binomial) <span class="co"># binary variable (0/1, unoccupied/occupied)</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(sp <span class="sc">~</span> season <span class="sc">+</span> edge_distance, <span class="co"># linear model of parrot occupancy predicted by season and distance</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> nest_boxes_clean, </span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">family =</span> binomial)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(sp <span class="sc">~</span> season, <span class="co"># linear model of parrot occupancy predicted by season</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> nest_boxes_clean, </span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">family =</span> binomial)</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">glm</span>(sp <span class="sc">~</span> edge_distance, <span class="co"># linear model of parrot occupancy predicted by distance</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> nest_boxes_clean, </span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">family =</span> binomial)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(sp <span class="sc">~</span> season <span class="sc">+</span> edge_distance, <span class="co"># linear model of parrot occupancy predicted by season and distance</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> nest_boxes_clean, <span class="co"># using the clean dataframe</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">family =</span> binomial) <span class="co"># binary variable (0/1, unoccupied/occupied)</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(sp <span class="sc">~</span> season, <span class="co"># linear model of parrot occupancy predicted by season</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> nest_boxes_clean, <span class="co"># using the clean dataframe</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">family =</span> binomial) <span class="co"># binary variable (0/1, unoccupied/occupied)</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">glm</span>(sp <span class="sc">~</span> edge_distance, <span class="co"># linear model of parrot occupancy predicted by distance</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> nest_boxes_clean, <span class="co"># using the clean dataframe</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">family =</span> binomial) <span class="co"># binary variable (0/1, unoccupied/occupied)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="f." class="level2">
@@ -434,23 +437,23 @@ model0  1 238.8318</code></pre>
   nobs.multinom MuMIn</code></pre>
 </div>
 <div class="cell-output-display">
-<div id="tezzlawfpb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tezzlawfpb table {
+<div id="rpkacsowub" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rpkacsowub table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tezzlawfpb thead, #tezzlawfpb tbody, #tezzlawfpb tfoot, #tezzlawfpb tr, #tezzlawfpb td, #tezzlawfpb th {
+#rpkacsowub thead, #rpkacsowub tbody, #rpkacsowub tfoot, #rpkacsowub tr, #rpkacsowub td, #rpkacsowub th {
   border-style: none;
 }
 
-#tezzlawfpb p {
+#rpkacsowub p {
   margin: 0;
   padding: 0;
 }
 
-#tezzlawfpb .gt_table {
+#rpkacsowub .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -476,12 +479,12 @@ model0  1 238.8318</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#tezzlawfpb .gt_caption {
+#rpkacsowub .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tezzlawfpb .gt_title {
+#rpkacsowub .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -493,7 +496,7 @@ model0  1 238.8318</code></pre>
   border-bottom-width: 0;
 }
 
-#tezzlawfpb .gt_subtitle {
+#rpkacsowub .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -505,7 +508,7 @@ model0  1 238.8318</code></pre>
   border-top-width: 0;
 }
 
-#tezzlawfpb .gt_heading {
+#rpkacsowub .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -517,13 +520,13 @@ model0  1 238.8318</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tezzlawfpb .gt_bottom_border {
+#rpkacsowub .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tezzlawfpb .gt_col_headings {
+#rpkacsowub .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -538,7 +541,7 @@ model0  1 238.8318</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tezzlawfpb .gt_col_heading {
+#rpkacsowub .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -558,7 +561,7 @@ model0  1 238.8318</code></pre>
   overflow-x: hidden;
 }
 
-#tezzlawfpb .gt_column_spanner_outer {
+#rpkacsowub .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -570,15 +573,15 @@ model0  1 238.8318</code></pre>
   padding-right: 4px;
 }
 
-#tezzlawfpb .gt_column_spanner_outer:first-child {
+#rpkacsowub .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tezzlawfpb .gt_column_spanner_outer:last-child {
+#rpkacsowub .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tezzlawfpb .gt_column_spanner {
+#rpkacsowub .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -590,11 +593,11 @@ model0  1 238.8318</code></pre>
   width: 100%;
 }
 
-#tezzlawfpb .gt_spanner_row {
+#rpkacsowub .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tezzlawfpb .gt_group_heading {
+#rpkacsowub .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -620,7 +623,7 @@ model0  1 238.8318</code></pre>
   text-align: left;
 }
 
-#tezzlawfpb .gt_empty_group_heading {
+#rpkacsowub .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -635,15 +638,15 @@ model0  1 238.8318</code></pre>
   vertical-align: middle;
 }
 
-#tezzlawfpb .gt_from_md > :first-child {
+#rpkacsowub .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tezzlawfpb .gt_from_md > :last-child {
+#rpkacsowub .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tezzlawfpb .gt_row {
+#rpkacsowub .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -662,7 +665,7 @@ model0  1 238.8318</code></pre>
   overflow-x: hidden;
 }
 
-#tezzlawfpb .gt_stub {
+#rpkacsowub .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -675,7 +678,7 @@ model0  1 238.8318</code></pre>
   padding-right: 5px;
 }
 
-#tezzlawfpb .gt_stub_row_group {
+#rpkacsowub .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -689,15 +692,15 @@ model0  1 238.8318</code></pre>
   vertical-align: top;
 }
 
-#tezzlawfpb .gt_row_group_first td {
+#rpkacsowub .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tezzlawfpb .gt_row_group_first th {
+#rpkacsowub .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tezzlawfpb .gt_summary_row {
+#rpkacsowub .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -707,16 +710,16 @@ model0  1 238.8318</code></pre>
   padding-right: 5px;
 }
 
-#tezzlawfpb .gt_first_summary_row {
+#rpkacsowub .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tezzlawfpb .gt_first_summary_row.thick {
+#rpkacsowub .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tezzlawfpb .gt_last_summary_row {
+#rpkacsowub .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -726,7 +729,7 @@ model0  1 238.8318</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#tezzlawfpb .gt_grand_summary_row {
+#rpkacsowub .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -736,7 +739,7 @@ model0  1 238.8318</code></pre>
   padding-right: 5px;
 }
 
-#tezzlawfpb .gt_first_grand_summary_row {
+#rpkacsowub .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -746,7 +749,7 @@ model0  1 238.8318</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#tezzlawfpb .gt_last_grand_summary_row_top {
+#rpkacsowub .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -756,11 +759,11 @@ model0  1 238.8318</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#tezzlawfpb .gt_striped {
+#rpkacsowub .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tezzlawfpb .gt_table_body {
+#rpkacsowub .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -769,7 +772,7 @@ model0  1 238.8318</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#tezzlawfpb .gt_footnotes {
+#rpkacsowub .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -783,7 +786,7 @@ model0  1 238.8318</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tezzlawfpb .gt_footnote {
+#rpkacsowub .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -792,7 +795,7 @@ model0  1 238.8318</code></pre>
   padding-right: 5px;
 }
 
-#tezzlawfpb .gt_sourcenotes {
+#rpkacsowub .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -806,7 +809,7 @@ model0  1 238.8318</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tezzlawfpb .gt_sourcenote {
+#rpkacsowub .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -814,72 +817,72 @@ model0  1 238.8318</code></pre>
   padding-right: 5px;
 }
 
-#tezzlawfpb .gt_left {
+#rpkacsowub .gt_left {
   text-align: left;
 }
 
-#tezzlawfpb .gt_center {
+#rpkacsowub .gt_center {
   text-align: center;
 }
 
-#tezzlawfpb .gt_right {
+#rpkacsowub .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tezzlawfpb .gt_font_normal {
+#rpkacsowub .gt_font_normal {
   font-weight: normal;
 }
 
-#tezzlawfpb .gt_font_bold {
+#rpkacsowub .gt_font_bold {
   font-weight: bold;
 }
 
-#tezzlawfpb .gt_font_italic {
+#rpkacsowub .gt_font_italic {
   font-style: italic;
 }
 
-#tezzlawfpb .gt_super {
+#rpkacsowub .gt_super {
   font-size: 65%;
 }
 
-#tezzlawfpb .gt_footnote_marks {
+#rpkacsowub .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tezzlawfpb .gt_asterisk {
+#rpkacsowub .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tezzlawfpb .gt_indent_1 {
+#rpkacsowub .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tezzlawfpb .gt_indent_2 {
+#rpkacsowub .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tezzlawfpb .gt_indent_3 {
+#rpkacsowub .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tezzlawfpb .gt_indent_4 {
+#rpkacsowub .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tezzlawfpb .gt_indent_5 {
+#rpkacsowub .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tezzlawfpb .katex-display {
+#rpkacsowub .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tezzlawfpb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rpkacsowub div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
