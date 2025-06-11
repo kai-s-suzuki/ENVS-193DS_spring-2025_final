@@ -32,8 +32,9 @@ In part 1, my co-worker used a linear model, likely a test finding the Pearson c
 In part 2, they could have shown us the variances of each source and ran a Tukey's honest significance test. Showing the variances between the different sources can explain whether the test assumed equal variances or not; if the variances are similar--within four times of each other as a gut test, it would change the perception of the information. A Tukey's HSD test run after would then tell us which sources were different from each other. 
 
 ## c. 
+There is a *[small/moderate/large] [positive/negative]* relationship between distance from headwater (km) and annual total nitrogen load (kg year^-1) (*Pearson's r = [correlation coefficient]*, p = 0.03, *$\alpha$ = [significance level]*).
 
-[INCLUDE SUGGESTIONS HERE]
+There is a *[small/moderate/large]* difference *(n^2 = [effect size])* in average nitrogen load (kg year^-1) between sources (urban land, atmospheric deposition, fertilizer, wastewater treatment, grasslands) (*one-way ANOVA, F([degrees of freedom between groups], [degrees of freedom within groups]) = [F-statistic]*, p = 0.02, *$\alpha$ = [significance level]*)
 
 # Problem 2. Data visualization
 
