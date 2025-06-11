@@ -8,7 +8,11 @@ format:
     toc-depth: 12
 ---
 
+
+
 [Link to Repository](https://github.com/kai-s-suzuki/ENVS-193DS_spring-2025_final)
+
+
 
 ```{r packages, message=FALSE}
 library(tidyverse)
@@ -22,6 +26,8 @@ library(ggeffects)
 sst <- read_csv("../data/SST_update2023.csv") # reading data for problem 2
 nest_boxes <- read_csv("../data/occdist.csv") # reading in data from article for problem 3
 ```
+
+
 
 # Problem 1. Research writing
 
@@ -39,6 +45,8 @@ There is a *[small/moderate/large]* difference *(n^2 = [effect size])* in averag
 # Problem 2. Data visualization
 
 ## a. 
+
+
 
 ```{r message = FALSE}
 # data wrangling
@@ -58,7 +66,11 @@ slice_sample(n = 5) # slicing 5 samples from any five months
 str(sst_clean) # looking at underlying data and factors
 ```
 
+
+
 ## b.
+
+
 ```{r warning = FALSE}
 ggplot(data = sst_clean, # starting with the sst_clean dataframe
     aes(x = month, # setting x axis as month
@@ -86,6 +98,8 @@ ggplot(data = sst_clean, # starting with the sst_clean dataframe
     limits = c(12.4,19.65)) # manually setting the min and max of the y-axis, adjusting so that '20' is aligned with the top of the graph and the lowest point is appropriately displayed and settled at the bottom
 ```
 
+
+
 # Problem 3. Data analysis
 
 ## a. 
@@ -112,6 +126,8 @@ The 2016 'season' represents the first year of the study that coincided with a t
 
 ## e. 
 
+
+
 ```{r}
 nest_boxes_clean <- nest_boxes |> # starting with the nest_boxes dataframe
   clean_names() |> # cleaning names
@@ -136,7 +152,11 @@ model3 <- glm(sp ~ edge_distance, # linear model of parrot occupancy predicted b
              family = binomial) # binary variable (0/1, unoccupied/occupied)
 ```
 
+
+
 ## f. 
+
+
 
 ```{r}
 plot(simulateResiduals(model0)) # plotting DHARMa package diagnostics for model 0
@@ -144,7 +164,11 @@ plot(simulateResiduals(model1)) # plotting DHARMa package diagnostics for model 
 plot(simulateResiduals(model2)) # plotting DHARMa package diagnostics for model 2
 plot(simulateResiduals(model3)) # plotting DHARMa package diagnostics for model 3
 ```
+
+
 ## g. 
+
+
 
 ```{r}
 AICc(
@@ -161,9 +185,13 @@ gtsummary::tbl_regression(model1, exponentiate = TRUE) # displaying the odds rat
 ```
 
 
+
+
 The best model as determined by Akaike's Information Criterion (AIC) was the model that includes season and distance as predictors for the response variable of swift parrot occupancy. 
 
 ## h. 
+
+
 
 ```{r}
 model_prediction <- ggpredict(model1, terms = c("edge_distance[all]", "season")) # creating an object that predicts the occupancy with 95% confidence based on the distance *and* season
@@ -197,16 +225,24 @@ ggplot(nest_boxes_clean, # starting with the clean data frame
                              "2019" = "#caa6c8")) # setting color for 2019 ribbon fill
 
 ```
+
+
 ## i.
 
 Figure 1: Swift Parrot occupancy is higher at a lower edge distance and during the first nesting season. The figure shows that occupancy (1) is abundant at edge distances below 600m, and less abundant above 600m. The predictor line displays higher expectations of occupancy at every edge distance in 2016 (green) than 2019 (purple). A 95% confidence interval is displayed, along with each individual data point used for the model. 
 
 Source: Stojanovic, D., et al. 2021. Do nest boxes breed the target species or its competitors? A case study of a critically endangered bird. Dryad. https://doi.org/10.5061/dryad.83bk3j9sb (Accessed 2025-06-04). 
 
+
+
 ```{r}
 summary(model1) # displaying the statistics for the model with season and edge distance as predictors.
 ```
+
+
 ## j. 
+
+
 
 ```{r}
 ggpredict(model1, terms = c("edge_distance[0]", "season[2016]")) # displaying predicted probabilities of swift parrot occupancy using both predictors if edge distance were 0m during 2016.
@@ -214,6 +250,8 @@ ggpredict(model1, terms = c("edge_distance [0]", "season[2019]")) # displaying p
 ggpredict(model1, terms = c("edge_distance[900]", "season[2016]")) # displaying predicted probabilities of swift parrot occupancy using both predictors if edge distance were 900m during 2016.
 ggpredict(model1, terms = c("edge_distance [900]", "season[2019]")) # displaying predicted probabilities of swift parrot occupancy using both predictors if edge distance were 900m during 2019.
 ```
+
+
 
 ## k. 
 
