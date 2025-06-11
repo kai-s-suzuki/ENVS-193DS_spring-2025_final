@@ -138,7 +138,6 @@ window.Quarto = {
   <li><a href="#problem-4.-affective-and-exploratory-visualizations" id="toc-problem-4.-affective-and-exploratory-visualizations" class="nav-link" data-scroll-target="#problem-4.-affective-and-exploratory-visualizations">Problem 4. Affective and exploratory visualizations</a>
   <ul>
   <li><a href="#a.-3" id="toc-a.-3" class="nav-link" data-scroll-target="#a.-3">a.</a></li>
-  <li><a href="#b.-3" id="toc-b.-3" class="nav-link" data-scroll-target="#b.-3">b.</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -202,7 +201,7 @@ window.Quarto = {
 <section id="c." class="level2">
 <h2 class="anchored" data-anchor-id="c.">c.&nbsp;</h2>
 <p>There is a <em>[small/moderate/large] [positive/negative]</em> relationship between distance from headwater (km) and annual total nitrogen load (kg year^-1) (<em>Pearson’s r = [correlation coefficient]</em>, p = 0.03, <em><span class="math inline">\(\alpha\)</span> = [significance level]</em>).</p>
-<p>There is a <em>[small/moderate/large]</em> difference <em>(n^2 = [effect size])</em> in average nitrogen load (kg year^-1) between sources (urban land, atmospheric deposition, fertilizer, wastewater treatment, grasslands) (<em>one-way ANOVA, F([degrees of freedom between groups], [degrees of freedom within groups]) = [F-statistic]</em>, p = 0.02, <em><span class="math inline">\(\alpha\)</span> = [significance level]</em>)</p>
+<p>There is a <em>[small/moderate/large]</em> difference <em>(n^2 = [effect size])</em> in average nitrogen load (kg year^-1) between sources (urban land, atmospheric deposition, fertilizer, wastewater treatment, grasslands) (<em>one-way ANOVA, F([degrees of freedom between groups], [degrees of freedom within groups]) = [F-statistic]</em>, p = 0.02, <em><span class="math inline">\(\alpha\)</span> = [significance level]</em>).</p>
 </section>
 </section>
 <section id="problem-2.-data-visualization" class="level1">
@@ -227,11 +226,11 @@ window.Quarto = {
 <pre><code># A tibble: 5 × 3
   year  month mean_monthly_sst
   &lt;fct&gt; &lt;ord&gt;            &lt;dbl&gt;
-1 2022  Mar               13.3
-2 2018  Jan               15  
-3 2023  Dec               16.1
-4 2022  Jun               16.2
-5 2018  Sep               18.2</code></pre>
+1 2019  Apr               13.7
+2 2018  Oct               18.5
+3 2020  Jul               17  
+4 2021  Aug               17.7
+5 2018  Feb               14.3</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sst_clean) <span class="co"># looking at underlying data and factors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -435,23 +434,23 @@ model0  1 238.8318</code></pre>
   nobs.multinom MuMIn</code></pre>
 </div>
 <div class="cell-output-display">
-<div id="ilnkenzcap" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ilnkenzcap table {
+<div id="tezzlawfpb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tezzlawfpb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ilnkenzcap thead, #ilnkenzcap tbody, #ilnkenzcap tfoot, #ilnkenzcap tr, #ilnkenzcap td, #ilnkenzcap th {
+#tezzlawfpb thead, #tezzlawfpb tbody, #tezzlawfpb tfoot, #tezzlawfpb tr, #tezzlawfpb td, #tezzlawfpb th {
   border-style: none;
 }
 
-#ilnkenzcap p {
+#tezzlawfpb p {
   margin: 0;
   padding: 0;
 }
 
-#ilnkenzcap .gt_table {
+#tezzlawfpb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -477,12 +476,12 @@ model0  1 238.8318</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#ilnkenzcap .gt_caption {
+#tezzlawfpb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ilnkenzcap .gt_title {
+#tezzlawfpb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -494,7 +493,7 @@ model0  1 238.8318</code></pre>
   border-bottom-width: 0;
 }
 
-#ilnkenzcap .gt_subtitle {
+#tezzlawfpb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -506,7 +505,7 @@ model0  1 238.8318</code></pre>
   border-top-width: 0;
 }
 
-#ilnkenzcap .gt_heading {
+#tezzlawfpb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -518,13 +517,13 @@ model0  1 238.8318</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ilnkenzcap .gt_bottom_border {
+#tezzlawfpb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ilnkenzcap .gt_col_headings {
+#tezzlawfpb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -539,7 +538,7 @@ model0  1 238.8318</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ilnkenzcap .gt_col_heading {
+#tezzlawfpb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -559,7 +558,7 @@ model0  1 238.8318</code></pre>
   overflow-x: hidden;
 }
 
-#ilnkenzcap .gt_column_spanner_outer {
+#tezzlawfpb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -571,15 +570,15 @@ model0  1 238.8318</code></pre>
   padding-right: 4px;
 }
 
-#ilnkenzcap .gt_column_spanner_outer:first-child {
+#tezzlawfpb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ilnkenzcap .gt_column_spanner_outer:last-child {
+#tezzlawfpb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ilnkenzcap .gt_column_spanner {
+#tezzlawfpb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -591,11 +590,11 @@ model0  1 238.8318</code></pre>
   width: 100%;
 }
 
-#ilnkenzcap .gt_spanner_row {
+#tezzlawfpb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ilnkenzcap .gt_group_heading {
+#tezzlawfpb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -621,7 +620,7 @@ model0  1 238.8318</code></pre>
   text-align: left;
 }
 
-#ilnkenzcap .gt_empty_group_heading {
+#tezzlawfpb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -636,15 +635,15 @@ model0  1 238.8318</code></pre>
   vertical-align: middle;
 }
 
-#ilnkenzcap .gt_from_md > :first-child {
+#tezzlawfpb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ilnkenzcap .gt_from_md > :last-child {
+#tezzlawfpb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ilnkenzcap .gt_row {
+#tezzlawfpb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -663,7 +662,7 @@ model0  1 238.8318</code></pre>
   overflow-x: hidden;
 }
 
-#ilnkenzcap .gt_stub {
+#tezzlawfpb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -676,7 +675,7 @@ model0  1 238.8318</code></pre>
   padding-right: 5px;
 }
 
-#ilnkenzcap .gt_stub_row_group {
+#tezzlawfpb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -690,15 +689,15 @@ model0  1 238.8318</code></pre>
   vertical-align: top;
 }
 
-#ilnkenzcap .gt_row_group_first td {
+#tezzlawfpb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ilnkenzcap .gt_row_group_first th {
+#tezzlawfpb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ilnkenzcap .gt_summary_row {
+#tezzlawfpb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -708,16 +707,16 @@ model0  1 238.8318</code></pre>
   padding-right: 5px;
 }
 
-#ilnkenzcap .gt_first_summary_row {
+#tezzlawfpb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ilnkenzcap .gt_first_summary_row.thick {
+#tezzlawfpb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ilnkenzcap .gt_last_summary_row {
+#tezzlawfpb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -727,7 +726,7 @@ model0  1 238.8318</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ilnkenzcap .gt_grand_summary_row {
+#tezzlawfpb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -737,7 +736,7 @@ model0  1 238.8318</code></pre>
   padding-right: 5px;
 }
 
-#ilnkenzcap .gt_first_grand_summary_row {
+#tezzlawfpb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -747,7 +746,7 @@ model0  1 238.8318</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#ilnkenzcap .gt_last_grand_summary_row_top {
+#tezzlawfpb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -757,11 +756,11 @@ model0  1 238.8318</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ilnkenzcap .gt_striped {
+#tezzlawfpb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ilnkenzcap .gt_table_body {
+#tezzlawfpb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -770,7 +769,7 @@ model0  1 238.8318</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ilnkenzcap .gt_footnotes {
+#tezzlawfpb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -784,7 +783,7 @@ model0  1 238.8318</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ilnkenzcap .gt_footnote {
+#tezzlawfpb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -793,7 +792,7 @@ model0  1 238.8318</code></pre>
   padding-right: 5px;
 }
 
-#ilnkenzcap .gt_sourcenotes {
+#tezzlawfpb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -807,7 +806,7 @@ model0  1 238.8318</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ilnkenzcap .gt_sourcenote {
+#tezzlawfpb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -815,72 +814,72 @@ model0  1 238.8318</code></pre>
   padding-right: 5px;
 }
 
-#ilnkenzcap .gt_left {
+#tezzlawfpb .gt_left {
   text-align: left;
 }
 
-#ilnkenzcap .gt_center {
+#tezzlawfpb .gt_center {
   text-align: center;
 }
 
-#ilnkenzcap .gt_right {
+#tezzlawfpb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ilnkenzcap .gt_font_normal {
+#tezzlawfpb .gt_font_normal {
   font-weight: normal;
 }
 
-#ilnkenzcap .gt_font_bold {
+#tezzlawfpb .gt_font_bold {
   font-weight: bold;
 }
 
-#ilnkenzcap .gt_font_italic {
+#tezzlawfpb .gt_font_italic {
   font-style: italic;
 }
 
-#ilnkenzcap .gt_super {
+#tezzlawfpb .gt_super {
   font-size: 65%;
 }
 
-#ilnkenzcap .gt_footnote_marks {
+#tezzlawfpb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ilnkenzcap .gt_asterisk {
+#tezzlawfpb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ilnkenzcap .gt_indent_1 {
+#tezzlawfpb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ilnkenzcap .gt_indent_2 {
+#tezzlawfpb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ilnkenzcap .gt_indent_3 {
+#tezzlawfpb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ilnkenzcap .gt_indent_4 {
+#tezzlawfpb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ilnkenzcap .gt_indent_5 {
+#tezzlawfpb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ilnkenzcap .katex-display {
+#tezzlawfpb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ilnkenzcap div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#tezzlawfpb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1042,9 +1041,10 @@ edge_distance | Predicted |     95% CI
 <h1>Problem 4. Affective and exploratory visualizations</h1>
 <section id="a.-3" class="level2">
 <h2 class="anchored" data-anchor-id="a.-3">a.</h2>
-</section>
-<section id="b.-3" class="level2">
-<h2 class="anchored" data-anchor-id="b.-3">b.</h2>
+<p>My visualizations were quite different between the exploratory made for homework 2 and the affective made for homework 3. I decided to change one of the represented variables and ensured the data was in categorical, rather than continuous form.</p>
+<p>Between all my visualizations, I see that one variable (caffeine consumptions in mg) was always incorporated as the y-axis. This was a simple decision because it is a direct factor that the body responds to, rather than something indirect, such as classes.</p>
+<p>The pattern of increased caffeine consumption on days with lower classes, an inverse relationship, is shown in each visualization. These ended up being the same between visualizations even through different sample sizes. The purely statistical visualization compares medians, but I used real caffeine sources in the physical visualization and compared their actual caffeine content.</p>
+<p>Something I considered from feedback in week 9 was that I should consider incorporating the boxplot into the artwork. If I were not finished with my artwork, I may have considered changing the mediums that I used to keep the suggestions, but I was satisfied with my final product. I was hesitant to initially start my visualization, but Grace offered great advice to help get me started.</p>
 </section>
 </section>
 

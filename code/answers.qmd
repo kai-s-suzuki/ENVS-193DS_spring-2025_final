@@ -34,7 +34,7 @@ In part 2, they could have shown us the variances of each source and ran a Tukey
 ## c. 
 There is a *[small/moderate/large] [positive/negative]* relationship between distance from headwater (km) and annual total nitrogen load (kg year^-1) (*Pearson's r = [correlation coefficient]*, p = 0.03, *$\alpha$ = [significance level]*).
 
-There is a *[small/moderate/large]* difference *(n^2 = [effect size])* in average nitrogen load (kg year^-1) between sources (urban land, atmospheric deposition, fertilizer, wastewater treatment, grasslands) (*one-way ANOVA, F([degrees of freedom between groups], [degrees of freedom within groups]) = [F-statistic]*, p = 0.02, *$\alpha$ = [significance level]*)
+There is a *[small/moderate/large]* difference *(n^2 = [effect size])* in average nitrogen load (kg year^-1) between sources (urban land, atmospheric deposition, fertilizer, wastewater treatment, grasslands) (*one-way ANOVA, F([degrees of freedom between groups], [degrees of freedom within groups]) = [F-statistic]*, p = 0.02, *$\alpha$ = [significance level]*).
 
 # Problem 2. Data visualization
 
@@ -222,5 +222,10 @@ There is an inverse relationship between edge distance and swift parrot occupanc
 
 ## a.
 
-## b. 
+My visualizations were quite different between the exploratory made for homework 2 and the affective made for homework 3. I decided to change one of the represented variables and ensured the data was in categorical, rather than continuous form. 
 
+Between all my visualizations, I see that one variable (caffeine consumptions in mg) was always incorporated as the y-axis. This was a simple decision because it is a direct factor that the body responds to, rather than something indirect, such as classes. 
+
+The pattern of increased caffeine consumption on days with lower classes, an inverse relationship, is shown in each visualization. These ended up being the same between visualizations even through different sample sizes. The purely statistical visualization compares medians, but I used real caffeine sources in the physical visualization and compared their actual caffeine content. 
+
+Something I considered from feedback in week 9 was that I should consider incorporating the boxplot into the artwork. If I were not finished with my artwork, I may have considered changing the mediums that I used to keep the suggestions, but I was satisfied with my final product. I was hesitant to initially start my visualization, but Grace offered great advice to help get me started. 
