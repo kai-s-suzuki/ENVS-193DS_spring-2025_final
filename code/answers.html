@@ -226,11 +226,11 @@ window.Quarto = {
 <pre><code># A tibble: 5 × 3
   year  month mean_monthly_sst
   &lt;fct&gt; &lt;ord&gt;            &lt;dbl&gt;
-1 2019  Jun               15.8
-2 2019  Mar               13.6
-3 2020  Jul               17  
-4 2019  Jul               16.3
-5 2020  Apr               14.3</code></pre>
+1 2020  Oct               19  
+2 2022  Jan               13.9
+3 2022  Jul               17  
+4 2019  Apr               13.7
+5 2022  Mar               13.3</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sst_clean) <span class="co"># looking at underlying data and factors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -437,23 +437,23 @@ model0  1 238.8318</code></pre>
   nobs.multinom MuMIn</code></pre>
 </div>
 <div class="cell-output-display">
-<div id="rpkacsowub" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rpkacsowub table {
+<div id="ovakcmssgl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ovakcmssgl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rpkacsowub thead, #rpkacsowub tbody, #rpkacsowub tfoot, #rpkacsowub tr, #rpkacsowub td, #rpkacsowub th {
+#ovakcmssgl thead, #ovakcmssgl tbody, #ovakcmssgl tfoot, #ovakcmssgl tr, #ovakcmssgl td, #ovakcmssgl th {
   border-style: none;
 }
 
-#rpkacsowub p {
+#ovakcmssgl p {
   margin: 0;
   padding: 0;
 }
 
-#rpkacsowub .gt_table {
+#ovakcmssgl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -479,12 +479,12 @@ model0  1 238.8318</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#rpkacsowub .gt_caption {
+#ovakcmssgl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rpkacsowub .gt_title {
+#ovakcmssgl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -496,7 +496,7 @@ model0  1 238.8318</code></pre>
   border-bottom-width: 0;
 }
 
-#rpkacsowub .gt_subtitle {
+#ovakcmssgl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -508,7 +508,7 @@ model0  1 238.8318</code></pre>
   border-top-width: 0;
 }
 
-#rpkacsowub .gt_heading {
+#ovakcmssgl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -520,13 +520,13 @@ model0  1 238.8318</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#rpkacsowub .gt_bottom_border {
+#ovakcmssgl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rpkacsowub .gt_col_headings {
+#ovakcmssgl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -541,7 +541,7 @@ model0  1 238.8318</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#rpkacsowub .gt_col_heading {
+#ovakcmssgl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -561,7 +561,7 @@ model0  1 238.8318</code></pre>
   overflow-x: hidden;
 }
 
-#rpkacsowub .gt_column_spanner_outer {
+#ovakcmssgl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -573,15 +573,15 @@ model0  1 238.8318</code></pre>
   padding-right: 4px;
 }
 
-#rpkacsowub .gt_column_spanner_outer:first-child {
+#ovakcmssgl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rpkacsowub .gt_column_spanner_outer:last-child {
+#ovakcmssgl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rpkacsowub .gt_column_spanner {
+#ovakcmssgl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -593,11 +593,11 @@ model0  1 238.8318</code></pre>
   width: 100%;
 }
 
-#rpkacsowub .gt_spanner_row {
+#ovakcmssgl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rpkacsowub .gt_group_heading {
+#ovakcmssgl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -623,7 +623,7 @@ model0  1 238.8318</code></pre>
   text-align: left;
 }
 
-#rpkacsowub .gt_empty_group_heading {
+#ovakcmssgl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -638,15 +638,15 @@ model0  1 238.8318</code></pre>
   vertical-align: middle;
 }
 
-#rpkacsowub .gt_from_md > :first-child {
+#ovakcmssgl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rpkacsowub .gt_from_md > :last-child {
+#ovakcmssgl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rpkacsowub .gt_row {
+#ovakcmssgl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -665,7 +665,7 @@ model0  1 238.8318</code></pre>
   overflow-x: hidden;
 }
 
-#rpkacsowub .gt_stub {
+#ovakcmssgl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -678,7 +678,7 @@ model0  1 238.8318</code></pre>
   padding-right: 5px;
 }
 
-#rpkacsowub .gt_stub_row_group {
+#ovakcmssgl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -692,15 +692,15 @@ model0  1 238.8318</code></pre>
   vertical-align: top;
 }
 
-#rpkacsowub .gt_row_group_first td {
+#ovakcmssgl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rpkacsowub .gt_row_group_first th {
+#ovakcmssgl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rpkacsowub .gt_summary_row {
+#ovakcmssgl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -710,16 +710,16 @@ model0  1 238.8318</code></pre>
   padding-right: 5px;
 }
 
-#rpkacsowub .gt_first_summary_row {
+#ovakcmssgl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rpkacsowub .gt_first_summary_row.thick {
+#ovakcmssgl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rpkacsowub .gt_last_summary_row {
+#ovakcmssgl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -729,7 +729,7 @@ model0  1 238.8318</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#rpkacsowub .gt_grand_summary_row {
+#ovakcmssgl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -739,7 +739,7 @@ model0  1 238.8318</code></pre>
   padding-right: 5px;
 }
 
-#rpkacsowub .gt_first_grand_summary_row {
+#ovakcmssgl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -749,7 +749,7 @@ model0  1 238.8318</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#rpkacsowub .gt_last_grand_summary_row_top {
+#ovakcmssgl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -759,11 +759,11 @@ model0  1 238.8318</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#rpkacsowub .gt_striped {
+#ovakcmssgl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rpkacsowub .gt_table_body {
+#ovakcmssgl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -772,7 +772,7 @@ model0  1 238.8318</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#rpkacsowub .gt_footnotes {
+#ovakcmssgl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -786,7 +786,7 @@ model0  1 238.8318</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#rpkacsowub .gt_footnote {
+#ovakcmssgl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -795,7 +795,7 @@ model0  1 238.8318</code></pre>
   padding-right: 5px;
 }
 
-#rpkacsowub .gt_sourcenotes {
+#ovakcmssgl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -809,7 +809,7 @@ model0  1 238.8318</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#rpkacsowub .gt_sourcenote {
+#ovakcmssgl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -817,72 +817,72 @@ model0  1 238.8318</code></pre>
   padding-right: 5px;
 }
 
-#rpkacsowub .gt_left {
+#ovakcmssgl .gt_left {
   text-align: left;
 }
 
-#rpkacsowub .gt_center {
+#ovakcmssgl .gt_center {
   text-align: center;
 }
 
-#rpkacsowub .gt_right {
+#ovakcmssgl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rpkacsowub .gt_font_normal {
+#ovakcmssgl .gt_font_normal {
   font-weight: normal;
 }
 
-#rpkacsowub .gt_font_bold {
+#ovakcmssgl .gt_font_bold {
   font-weight: bold;
 }
 
-#rpkacsowub .gt_font_italic {
+#ovakcmssgl .gt_font_italic {
   font-style: italic;
 }
 
-#rpkacsowub .gt_super {
+#ovakcmssgl .gt_super {
   font-size: 65%;
 }
 
-#rpkacsowub .gt_footnote_marks {
+#ovakcmssgl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rpkacsowub .gt_asterisk {
+#ovakcmssgl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rpkacsowub .gt_indent_1 {
+#ovakcmssgl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rpkacsowub .gt_indent_2 {
+#ovakcmssgl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rpkacsowub .gt_indent_3 {
+#ovakcmssgl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rpkacsowub .gt_indent_4 {
+#ovakcmssgl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rpkacsowub .gt_indent_5 {
+#ovakcmssgl .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rpkacsowub .katex-display {
+#ovakcmssgl .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rpkacsowub div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ovakcmssgl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -940,7 +940,7 @@ model0  1 238.8318</code></pre>
 <span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="co"># setting the x axis as x, the real distances of nest boxes from the forest</span></span>
 <span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> predicted, <span class="co"># setting the line to fit the predicted occupancies </span></span>
 <span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> group), <span class="co"># coloring the two lines by the year/season of the predictions</span></span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">1</span>, <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="co"># setting the size of the dot and removing parameters from geom ribbon call</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">linewidth =</span> <span class="dv">1</span>, <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="co"># setting the size of the dot and removing parameters from geom ribbon call</span></span>
 <span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="co"># using black and white ggplot theme</span></span>
 <span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.9</span>, <span class="fl">0.7</span>), <span class="co"># moving legend position to inside graph</span></span>
 <span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(), <span class="co"># removing major lines, which are vertical lines and some of the horizontal</span></span>
@@ -954,10 +954,6 @@ model0  1 238.8318</code></pre>
 <span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"2019"</span> <span class="ot">=</span> <span class="st">"#5a0856"</span>)) <span class="sc">+</span> <span class="co"># setting color for 2019 line</span></span>
 <span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"2016"</span> <span class="ot">=</span> <span class="st">"#afe5c0"</span>, <span class="co"># setting color for 2016 ribbon fill</span></span>
 <span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"2019"</span> <span class="ot">=</span> <span class="st">"#caa6c8"</span>)) <span class="co"># setting color for 2019 ribbon fill</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -972,7 +968,7 @@ model0  1 238.8318</code></pre>
 <p>Figure 1: Swift Parrot occupancy is higher at a lower edge distance and during the first nesting season. The figure shows that occupancy (1) is abundant at edge distances below 600m, and less abundant above 600m. The predictor line displays higher expectations of occupancy at every edge distance in 2016 (green) than 2019 (purple). A 95% confidence interval is displayed, along with each individual data point used for the model.</p>
 <p>Source: Stojanovic, D., et al.&nbsp;2021. Do nest boxes breed the target species or its competitors? A case study of a critically endangered bird. Dryad. https://doi.org/10.5061/dryad.83bk3j9sb (Accessed 2025-06-04).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1) <span class="co"># displaying the statistics for the model with season and edge distance as predictors.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1) <span class="co"># displaying the statistics for the model with season and edge distance as predictors.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -1000,7 +996,7 @@ Number of Fisher Scoring iterations: 4</code></pre>
 <section id="j." class="level2">
 <h2 class="anchored" data-anchor-id="j.">j.</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpredict</span>(model1, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"edge_distance[0]"</span>, <span class="st">"season[2016]"</span>)) <span class="co"># displaying predicted probabilities of swift parrot occupancy using both predictors if edge distance were 0m during 2016.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpredict</span>(model1, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"edge_distance[0]"</span>, <span class="st">"season[2016]"</span>)) <span class="co"># displaying predicted probabilities of swift parrot occupancy using both predictors if edge distance were 0m during 2016.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Predicted probabilities of sp
 
@@ -1008,7 +1004,7 @@ edge_distance | Predicted |     95% CI
 --------------------------------------
             0 |      0.48 | 0.33, 0.64</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpredict</span>(model1, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"edge_distance [0]"</span>, <span class="st">"season[2019]"</span>)) <span class="co"># displaying predicted probabilities of swift parrot occupancy using both predictors if edge distance were 0m during 2019.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpredict</span>(model1, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"edge_distance [0]"</span>, <span class="st">"season[2019]"</span>)) <span class="co"># displaying predicted probabilities of swift parrot occupancy using both predictors if edge distance were 0m during 2019.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Predicted probabilities of sp
 
@@ -1016,7 +1012,7 @@ edge_distance | Predicted |     95% CI
 --------------------------------------
             0 |      0.30 | 0.18, 0.44</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpredict</span>(model1, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"edge_distance[900]"</span>, <span class="st">"season[2016]"</span>)) <span class="co"># displaying predicted probabilities of swift parrot occupancy using both predictors if edge distance were 900m during 2016.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpredict</span>(model1, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"edge_distance[900]"</span>, <span class="st">"season[2016]"</span>)) <span class="co"># displaying predicted probabilities of swift parrot occupancy using both predictors if edge distance were 900m during 2016.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Predicted probabilities of sp
 
@@ -1024,7 +1020,7 @@ edge_distance | Predicted |     95% CI
 --------------------------------------
           900 |      0.12 | 0.06, 0.24</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpredict</span>(model1, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"edge_distance [900]"</span>, <span class="st">"season[2019]"</span>)) <span class="co"># displaying predicted probabilities of swift parrot occupancy using both predictors if edge distance were 900m during 2019.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpredict</span>(model1, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"edge_distance [900]"</span>, <span class="st">"season[2019]"</span>)) <span class="co"># displaying predicted probabilities of swift parrot occupancy using both predictors if edge distance were 900m during 2019.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Predicted probabilities of sp
 
@@ -1036,7 +1032,7 @@ edge_distance | Predicted |     95% CI
 </section>
 <section id="k." class="level2">
 <h2 class="anchored" data-anchor-id="k.">k.</h2>
-<p>Swift Parrot occupancy was predicted to be higher at a lower edge distance and during the 2016 season rather than the 2019 (Figure 1). With an increase from 2016 to 2019, the odds of a box being occupied by a swift parrot fall by a factor of 77% (95% CI: [0.62, 0.96], p = 0.022, <span class="math inline">\(\alpha\)</span> = 0.05); With each meter increase in edge distance, the odds of occupancy fall by a factor of 99.8% (95% CI: [0.997, 0.999], p &lt; 0.001, <span class="math inline">\(\alpha\)</span> = 0.05).</p>
+<p>Swift Parrot occupancy was predicted to be higher at both a lower edge distance and during the 2016 season–rather than the 2019 season–as a distance of 0 meters had a predicted probability of occupancy of 0.48 (2016) and 0.30 (2019); at a distance of 900 meters the predicted probability was lower, at 0.12 (2016) and 0.06 (2019) (Figure 1). With an increase from 2016 to 2019, the odds of a box being occupied by a swift parrot fall by a factor of 77% (95% CI: [0.62, 0.96], p = 0.022, <span class="math inline">\(\alpha\)</span> = 0.05); With each meter increase in edge distance, the odds of occupancy fall by a factor of 99.8% (95% CI: [0.997, 0.999], p &lt; 0.001, <span class="math inline">\(\alpha\)</span> = 0.05).</p>
 <p>There is an inverse relationship between edge distance and swift parrot occupancy, with a higher chance of occupancy at a lower edge distance. Swift parrot nest occupancy is higher at lower edge distances because the natural habitat of the parrot is in the forest. Parrots would use the boxes that are more convenient to them, which are generally those that are closer to the forest. The other species studied, such as the common starlings, also end up not nesting closer to the forest because they avoid living deep in the forest.</p>
 </section>
 </section>

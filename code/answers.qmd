@@ -181,7 +181,7 @@ ggplot(nest_boxes_clean, # starting with the clean data frame
             aes(x = x, # setting the x axis as x, the real distances of nest boxes from the forest
                 y = predicted, # setting the line to fit the predicted occupancies 
                 color = group), # coloring the two lines by the year/season of the predictions
-            size = 1, inherit.aes = FALSE) + # setting the size of the dot and removing parameters from geom ribbon call
+            linewidth = 1, inherit.aes = FALSE) + # setting the size of the dot and removing parameters from geom ribbon call
   theme_bw() + # using black and white ggplot theme
   theme(legend.position = c(0.9, 0.7), # moving legend position to inside graph
         panel.grid.major = element_blank(), # removing major lines, which are vertical lines and some of the horizontal
@@ -217,7 +217,7 @@ ggpredict(model1, terms = c("edge_distance [900]", "season[2019]")) # displaying
 
 ## k. 
 
-Swift Parrot occupancy was predicted to be higher at a lower edge distance and during the 2016 season rather than the 2019 (Figure 1). With an increase from 2016 to 2019, the odds of a box being occupied by a swift parrot fall by a factor of 77% (95% CI: [0.62, 0.96], p = 0.022, $\alpha$ = 0.05); With each meter increase in edge distance, the odds of occupancy fall by a factor of 99.8% (95% CI: [0.997, 0.999], p < 0.001, $\alpha$ = 0.05). 
+Swift Parrot occupancy was predicted to be higher at both a lower edge distance and during the 2016 season--rather than the 2019 season--as a distance of 0 meters had a predicted probability of occupancy of 0.48 (2016) and 0.30 (2019); at a distance of 900 meters the predicted probability was lower, at 0.12 (2016) and 0.06 (2019) (Figure 1). With an increase from 2016 to 2019, the odds of a box being occupied by a swift parrot fall by a factor of 77% (95% CI: [0.62, 0.96], p = 0.022, $\alpha$ = 0.05); With each meter increase in edge distance, the odds of occupancy fall by a factor of 99.8% (95% CI: [0.997, 0.999], p < 0.001, $\alpha$ = 0.05). 
 
 There is an inverse relationship between edge distance and swift parrot occupancy, with a higher chance of occupancy at a lower edge distance. Swift parrot nest occupancy is higher at lower edge distances because the natural habitat of the parrot is in the forest. Parrots would use the boxes that are more convenient to them, which are generally those that are closer to the forest. The other species studied, such as the common starlings, also end up not nesting closer to the forest because they avoid living deep in the forest. 
 
